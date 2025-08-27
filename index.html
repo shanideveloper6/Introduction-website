@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page ♥</title>        
+      <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.5s ease;
+        }
+        *::selection{
+            background-color: black;
+            color: white;
+        }
+        #nav{
+            width: 100%;
+            height: 08vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            background: linear-gradient(to left, rgb(235, 73, 73), rgb(255, 0, 0));
+            position: sticky;
+            top: 0px;
+            z-index: 999;
+        }
+        #nav> .logo > h2{
+            font-size: 5ch;
+                  font-family: 'Great Vibes', cursive;
+                  font-weight: bolder;
+                  cursor:pointer;
+
+        }
+        #nav > .logo > h2:hover{
+            color: whitesmoke;
+            transform: scale(1.1);
+            text-shadow: 0 0 10px black;
+        }
+        #nav > .links{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly ;
+        }
+        #nav > .links > ul{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 5vh;
+            font-size: 2.5ch;
+        }
+        #nav > .links > ul >li> a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+       #nav .links > ul > li >a:hover{
+            color: whitesmoke;
+            text-shadow: 0 0 10px black;
+            transform: scale(1.1);
+        }
+        #hero-main{
+            width: 100%;
+            height: 92vh;
+            position: relative;
+        }
+        .overlay{
+            width: 100%;
+            height: 92vh;
+            background-color: rgba(0, 0, 0, 0.664);
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+
+        }
+        button:hover{
+                box-shadow: 0 0 15px red;
+
+        }
+        #hero{
+            width: 100%;
+            height: 92vh;
+            background-image: url(https://cdn.analyticsvidhya.com/wp-content/uploads/2024/04/Top-8-Coding-Platforms-for-Data-Science-Beginner-01-scaled.jpg);
+            background-position: center;
+            background-size: cover; 
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3vh;
+            position: relative;
+            z-index: 2;
+        }
+        #hero  > h1{
+            font-size: 10ch;
+            font-family: 'Great Vibes', cursive;
+            font-weight: bolder;
+        }
+        #hero > h3{
+            font-size: 4ch;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        #hero > button{
+            width: 15vh;
+            height: 4vh;
+            background-color: transparent;
+            color: whitesmoke;
+            font-size: 3ch;
+            font-weight: bolder;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            border-radius: 5px;
+            border: 2px solid red;
+        }
+        #hero > button:hover{
+            cursor: pointer;
+            color: red;
+            border: 2px solid whitesmoke;
+        }
+        #about{
+            width: 100%;
+            height: 60vh;
+            background: linear-gradient(to left, rgb(203, 203, 203),rgb(230, 230, 230));
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        #about > .image{
+            width: 30%;
+            height: 50vh;
+
+        }
+        #about > .image > img{
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 0 20px black;
+            border-radius: 50%;
+        }
+        #about > .con{
+            width: 30%;
+            line-height: 025px;
+            height: 30vh;
+        }
+        .con > h1{
+            color: red;
+            font-family: 'Great Vibes', cursive;
+            font-size: 8ch;
+            margin: 20px;
+        }
+        .con > p{
+            font-size: 2.5ch;
+            text-align: justify;
+            font-weight: bold;
+            margin-top: 40px;
+        }
+        #services{
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(to left, rgb(14, 159, 207), rgb(8, 120, 158));
+            width: 100%;
+            height: 60vh;
+            align-items: center;
+            justify-content: center;
+            gap: 10vh;
+        }
+        .card{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .box{
+            width: 25%;
+            height: 20vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            background: linear-gradient(to left, rgb(42, 42, 42), rgb(24, 24, 24));
+            color:white;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px white;
+            cursor: pointer;
+        }
+        .box:hover{
+            transform: scale(1.1);
+            box-shadow: 0 0 20px white;
+        }
+        h1{
+            font-size: 6ch;
+            font-family: 'Great Vibes', cursive;
+        }
+        i{
+            font-size: 3ch;
+        }
+        p{
+            text-align: center;
+        }
+        #contact{
+            width: 100%;
+            height: 40vh;
+            background: linear-gradient(to left, rgb(44, 44, 44), rgb(41, 41, 41));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #contact > h1{
+            font-family: 'Great Vibes', cursive;
+            font-size: 8ch;
+            margin: 40px;
+        }
+        #contact > input{
+            width: 18%;
+            height: 4vh;
+            margin: 15px;
+            border: red 2px solid;
+            border-radius: 12px;
+            padding: 10px;
+            font-size: 1rem;
+            outline: none;
+        }
+        #contact > input:hover{
+            outline: 1px solid white;
+        }
+        #contact > button{
+            width: 15vh;
+            height: 4vh;
+            background-color: transparent;
+            color: whitesmoke;
+            font-size: 3ch;
+            font-weight: bolder;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            border-radius: 5px;
+            border: 2px solid red;
+        }
+        #contact > button:hover{
+            cursor: pointer;
+            color: red;
+            border: 2px solid whitesmoke;
+        }
+        footer{
+            width: 100%;
+            height: 8vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to left, rgb(14, 207, 75), rgb(8, 158, 56));
+        }
+        @media (max-width:768px) {
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.5s ease;
+        }
+        *::selection{
+            background-color: black;
+            color: white;
+        }
+        #nav{
+            width: 100%;
+            height: 08vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            background: linear-gradient(to left, rgb(235, 73, 73), rgb(255, 0, 0));
+            position: sticky;
+            top: 0px;
+            z-index: 999;
+        }
+        #nav> .logo > h2{
+            font-size: 3ch;
+                  font-family: 'Great Vibes', cursive;
+                  font-weight: bold;
+                  cursor:pointer;
+
+        }
+        #nav > .logo > h2:hover{
+            color: whitesmoke;
+            transform: scale(1.1);
+            text-shadow: 0 0 10px black;
+        }
+        #nav > .links{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly ;
+        }
+        #nav > .links > ul{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2vh;
+            font-size: 1rem;
+        }
+        #nav > .links > ul >li> a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+       #nav .links > ul > li >a:hover{
+            color: whitesmoke;
+            text-shadow: 0 0 10px black;
+            transform: scale(1.1);
+        }
+        #hero-main{
+            width: 100%;
+            height: 92vh;
+            position: relative;
+        }
+        .overlay{
+            width: 100%;
+            height: 92vh;
+            background-color: rgba(0, 0, 0, 0.664);
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+
+        }
+        #hero{
+            width: 100%;
+            height: 92vh;
+            background-image: url(https://cdn.analyticsvidhya.com/wp-content/uploads/2024/04/Top-8-Coding-Platforms-for-Data-Science-Beginner-01-scaled.jpg);
+            background-position: center;
+            background-size: cover; 
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3vh;
+            position: relative;
+            z-index: 2;
+        }
+        #hero  > h1{
+            font-size: 5ch;
+            font-family: 'Great Vibes', cursive;
+            font-weight: bolder;
+        }
+        #hero > h3{
+            font-size: 2.3ch;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bolder;
+        }
+        #hero > button{
+            width: 15vh;
+            height: 4vh;
+            background-color: transparent;
+            color: whitesmoke;
+            font-size: 3ch;
+            font-weight: bolder;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            border-radius: 5px;
+            border: 2px solid red;
+        }
+        #hero > button:hover{
+            cursor: pointer;
+            color: red;
+            border: 2px solid whitesmoke;
+        }
+        #about{
+            width: 100%;
+            height: 60vh;
+            background: linear-gradient(to left, rgb(203, 203, 203),rgb(230, 230, 230));
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        #about > .image{
+            width: 35%;
+            height: 25vh;
+
+        }
+        #about > .image > img{
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 0 20px black;
+            border-radius: 50%;
+        }
+        #about > .con{
+            width: 35%;
+            line-height: 20px;
+            height: 30vh;
+        }
+        .con > h1{
+            color: red;
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5ch;
+            margin: 10px;
+        }
+        .con > p{
+            font-size: 1rem;
+            text-align: left;
+            margin-top: 20px;
+        }
+        #services{
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(to left, rgb(14, 159, 207), rgb(8, 120, 158));
+            width: 100%;
+            height: 80vh;
+            align-items: center;
+            justify-content: center;
+            gap: 10vh;
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .box{
+            width: 50%;
+            height: 20vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to left, rgb(42, 42, 42), rgb(24, 24, 24));
+            color:white;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px white;
+            cursor: pointer;
+        }
+        .box:hover{
+            transform: scale(1.1);
+            box-shadow: 0 0 20px white;
+        }
+        h1{
+            font-size: 4ch;
+            font-family: 'Great Vibes', cursive;
+            margin-top: 10px;
+        }
+        i{
+            font-size: 2.5ch;
+        }
+        p{
+            text-align: center;
+        }
+        #contact{
+            width: 100%;
+            height: 40vh;
+            background: linear-gradient(to left, rgb(44, 44, 44), rgb(41, 41, 41));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #contact > h1{
+            font-family: 'Great Vibes', cursive;
+            font-size: 4ch;
+            margin: 20px;
+        }
+        #contact > input{
+            width: 70%;
+            height: 4vh;
+            margin: 15px;
+            border: red 2px solid;
+            border-radius: 12px;
+            padding: 10px;
+            font-size: 1rem;
+            outline: none;
+        }
+        #contact > input:hover{
+            outline: 1px solid white;
+        }
+        #contact > button{
+            width: 15vh;
+            height: 4vh;
+            background-color: transparent;
+            color: whitesmoke;
+            font-size: 3ch;
+            font-weight: bolder;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            border-radius: 5px;
+            border: 2px solid red;
+        }
+        #contact > button:hover{
+            cursor: pointer;
+            color: red;
+            border: 2px solid whitesmoke;
+        }
+        footer{
+            width: 100%;
+            height: 8vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to left, rgb(14, 207, 75), rgb(8, 158, 56));
+            font-size: 1.5ch;
+        }   
+        }
+    </style>
+        </head>
+<body>
+    <div id="nav">
+        <div class="logo">
+            <h2>Shayan</h2>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="hero-main">
+        <div class="overlay"></div>
+        <div id="hero">
+        <h1>Hi, I’m Shayan</h1>
+        <h3>Aspiring Web Developer</h3>
+        <button>Hire Me</button>
+        </div>
+    </div>
+    <div id="about">
+        <div class="image">
+            <img src="https://backiee.com/static/wallpapers/1920x1080/386745.jpg" alt="coading">
+        </div>
+        <div class="con">
+            <h1>About Me</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem aliquid deleniti ex officiis, ea dolorem eveniet error tempore dignissimos quidem, velit numquam beatae temporibus explicabo, rem deserunt cumque dolore debitis!</p>
+        </div>
+    </div>
+    <div id="services">
+        <h1>My Services</h1>
+        <div class="card">
+            <div class="box">
+                <h2>Web Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.rem perferendis.</p>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div class="box">
+                <h2>Development</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.rem perferendis.</p>
+                <i class="fa-solid fa-desktop"></i>
+            </div>
+            <div class="box">
+                <h2>SEO</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.rem perferendis.</p>
+                <i class="fa-solid fa-paintbrush"></i>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <h1>Contact Us</h1>
+        <input type="text" placeholder="Enter Your Name">
+        <input type="email" placeholder="Enter Your Email">
+        <button>Submit</button>
+    </div>
+    <footer>
+        <h2>© 2025 Shayan | All Rights Reserved</h2>
+    </footer>
+</body>
+</html>
